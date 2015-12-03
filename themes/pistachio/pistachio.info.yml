@@ -1,0 +1,143 @@
+# The [theme name].info.yml file provides all the settings and meta-data for the
+# theme. The file must have the same name as the theme folder.
+
+# The display name for this theme. The name will appear on the Appearance page.
+name: Pistachio
+
+# A brief description of the theme. The description will appear on the
+# Appearance page.
+description: A nutty, yet elegant example theme.
+
+# The type defines the extension type (module, theme, etc.)
+# This is required and should always be set to 'theme' for a theme.
+type: theme
+
+# The base theme setting specifies another theme to use as a "parent" theme.
+# Templates, CSS, and other properties are inherited from the base theme. If a
+# base theme is not specified, Stable will automatically be used as the base
+# theme. To op-out of using Stable, set base theme to 'false'.
+#
+# base theme: false
+#
+# Classy is a new (base) theme for Drupal 8. Read more about Classy at
+# https://www.drupal.org/theme-guide/8/classy.
+base theme: classy
+
+# The supported Drupal version.
+# core: 8.x
+
+# The version number for the theme is optional. Quotes are needed because the
+# format is intepreted as a number and the trailing zero is lost when displayed.
+# version: '1.0'
+
+# The screenshot is the image used on the appearance page. The setting is
+# optional, and if not specified, Drupal will automatically look for a file
+# called 'screenshot.png' in the root of the theme's folder. If a different file
+# name or type is wanted, the screenshot setting must be used.
+#
+# If the theme does not supply a screenshot, and uses a base theme that does,
+# the screenshot will be inheritted from the base theme.
+screenshot: screenshot.png
+
+# Libraries contain CSS and JavaScript files. The libraries setting is used to
+# globally add libraries, which means they will appear on every page. Libraries
+# are not limited to ones defined in the the theme. Ones from other themes and
+# modules can be included as long as they are installed.
+#
+# Libraries are defined in [theme name].libraries.yml. To conditionally include
+# libraries see https://www.drupal.org/theme-guide/8/assets.
+libraries:
+  # Picturefill is a library defined in core.libraries.yml. It contains a
+  # JavaScript file and depends on matchMedia. Drupal will process the
+  # dependency and also include matchMedia's JavaScript file.
+  - core/picturefill
+  # The user library is defined by Classy, which was set as the base theme.
+  # Classy will add this library conditionally when user info is displaced, but
+  # adding here will include it globally.
+  - classy/user
+  # The following are libraries defined by Pistachio in pistachio.libraries.yml.
+  - pistachio/global-styling
+  - pistachio/global-scripts
+
+# Special stylesheets can be defined for CKEditor to use while editing.
+ckeditor_stylesheets:
+  - css/editors/ckeditor.css
+
+# Special stylesheets can be defined for the Quick Edit editing window.
+quickedit_stylesheets:
+  - css/editors/quickedit.css
+
+# Libraries-override is used to override any of the assets defined by a library.
+# Use it to remove files, replace files with your own, replace a library with
+# your own library, or remove the library completely.
+# See https://www.drupal.org/node/2497313.
+libraries-override:
+  # The library name.
+  core/jquery.ui:
+    # CSS files are always slabeled as such. This format is required.
+    css:
+      # The SMACSS category is required. See https://www.drupal.org/node/1887922
+      theme:
+        # The path to the file. It is not a path relative to your theme. This
+        # should be the same as the path specified in the library file where it
+        # was defined. Setting to 'false' prevents the file from being
+        # included.
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  system/maintenance:
+    css:
+      theme:
+        # Replace the System module's maintenance CSS file with a custom one.
+        css/system.maintenance.css: css/maintenance.css
+  # Replace Classy's messages library with a custom one.
+  classy/messages:
+    pistachio/messages
+  # Remove Classy's search results library completely.
+  classy/search-results: false
+
+# Libraries-extend is used to attach libraries to other libraries. If the
+# original library is conditionally included, the library it is extended with
+# will be included under the same conditions.
+libraries-extend:
+  # Classy's forums library is only included when the forums.html.twig template
+  # is used. This will add Pistachio's forums library at the same time.
+  classy/forums:
+    - pistachio/forums
+
+# If no regions are not defined Drupal will use a set of default regions.
+# Defining any number of regions will override the default list provided by
+# core. So, if only one region is defined, one is all that is created.
+#
+# The following is the list of default regions:
+#
+# sidebar_first: Left sidebar
+# sidebar_second: Right sidebar
+# content: Content
+# header: Header
+# primary_menu: Primary menu
+# secondary_menu: Secondary menu
+# footer: Footer
+# highlighted: Highlighted
+# help: Help
+# breadcrumb: Breadcrumb
+#
+# The 'content' region is the only required region. All other regions can be
+# named anything you want. The format is machine_name: Display Name.
+#
+# Once you define your own regions, you will need to add a custom page.html.twig
+# file to print the regions.
+regions:
+  header_first: Header First
+  header_second: Header Second
+  header_third: Header Third
+  content: Content
+  sidebar_first: Sidebar First
+  sidebar_second: Sidebar Second
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+
+# Information added by Drupal.org packaging script on 2015-11-12
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'pistachio'
+datestamp: 1447351440

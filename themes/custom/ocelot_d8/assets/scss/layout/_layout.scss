@@ -1,0 +1,9 @@
+// ====================================================================================================== //
+// LAYOUT.SCSS //
+// This file contains global page layout rules, layout rules that return on every page
+// ====================================================================================================== //
+
+.layout-content {
+  @include outer-container;
+  padding: 20px 0;
+}

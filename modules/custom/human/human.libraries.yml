@@ -1,0 +1,6 @@
+global-styling:
+  version: 'v0.0.1'
+
+  css:
+    component:
+      css/component-styles.css: {}

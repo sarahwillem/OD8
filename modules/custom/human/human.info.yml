@@ -1,0 +1,5 @@
+name: human
+type: module
+description: human
+core: 8.x
+package: Other

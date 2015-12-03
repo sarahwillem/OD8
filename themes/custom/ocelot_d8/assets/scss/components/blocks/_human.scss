@@ -1,0 +1,37 @@
+.block_stats {
+  width: 415px;
+  background: $white;  
+}
+
+img {
+  width: 52px;
+  height: 52px;
+  background: $black;
+}
+
+ul.stats {
+  @include clearfix();
+
+  li {
+    display: inline-block; 
+    float: left;
+    width: calc(100%/3 - 2px);
+    margin-right: 1px;
+  
+    &:last-of-type {
+      margin-right: 0; 
+    }
+  } 
+}
+
+li.msgs {
+  background: $messages-bg;
+}
+
+li.watches {
+  background: $watches-bg; 
+}
+
+li.likes {
+  background: $likes-bg;
+}

@@ -1,0 +1,81 @@
+# The [theme name].libraries.yml defines all the libraries used by the theme.
+# Libraries are defined here, but are not included in your site until they are
+# added in the theme's info file, in a template using attach_library(), or by
+# some other programmatic means.
+
+# Each library must have a unique name within the module or theme defining it.
+# For example, every module can define a library named 'global-styling,' but
+# each module can only have one library with that name. The libraries will be
+# referenced using the theme name and library name together.
+#
+# pistachio/global-styling
+# pistachio/global-scripts
+
+# Libraries can have any name, but it is common to define one named
+# 'global-styling' which provides the CSS that is loaded on every page.
+global-styling:
+  # The version of the library.
+  version: '1.0.x'
+  # This is where you define CSS files. The CSS files conceptually use SMACSS
+  # categories. See https://smacss.com/. There are 5 categories, processed in
+  # this order:
+  # - base
+  # - layout
+  # - component
+  # - state
+  # - theme
+  #
+  # It is important to note that load order of CSS files is based on the
+  # category, but all themes are kept together as one large group, and seperate
+  # from module CSS. Module CSS is also loaded based on SMACSS categories, but
+  # loaded first. This ensures that all module CSS comes before theme CSS.
+  css:
+    # The SMACSS category.
+    base:
+      # The path to the css file, starting from the root of the theme.
+      assets/css/layout-styles.css: {}
+      assets/css/base-styles.css: {}
+      assets/css/component-styles.css: {}
+    theme:
+      # You can specify media properties for a CSS file as well as other
+      # properties. See https://www.drupal.org/theme-guide/8/assets.
+      # <link rel="stylesheet" href="assets/css/print.css" media="print" />
+      assets/css/print.css: { media: print }
+
+# Adding a JavaScript file.
+#
+# This JavaScript file contains an example of a Drupal.theme() function and
+# demonstrates how Drupal behaviors works.
+global-scripts:
+  version: '1.0.x'
+  js:
+    assets/js/example.base.js: {}
+  css:
+    component:
+      assets/css/example.base.css: {}
+  # The script is using jQuery and Drupal behaviors. Since these are NOT
+  # included by default, some dependencies are required.
+  #
+  # - core/drupal -- In order to take advantage of Drupal.behaviors.
+  # - core/jquery -- Include the jQuery library from Drupal core.
+  # - core/once   -- A plugin for only applying a function once to an element
+  #                  (since behaviors are executed after every AJAX call).
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+# Add custom CSS to replace Classy's messages styling.
+messages:
+  version: '1.0.x'
+  css:
+    component:
+      assets/css/messages.css
+
+# Add an external stylesheet.
+#
+# In the following example, we add a Google font (Lato).
+lato-google-font:
+  css:
+    base:
+      '//fonts.googleapis.com/css?family=Lato:300,400,700': { external: true }

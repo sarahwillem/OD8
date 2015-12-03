@@ -1,0 +1,26 @@
+name: Ocelot_D8
+type: theme
+description: Ocelot D8
+package: Other
+core: 8.x
+
+libraries:
+  - core/picturefill
+  - classy/user
+  - ocelot_d8/global-styling
+  - ocelot_d8/global-scripts
+
+base theme: classy
+screenshot: screenshot.png
+
+ckeditor_stylesheets:
+  - css/editors/ckeditor.css
+
+quickedit_stylesheets:
+  - css/editors/quickedit.css
+
+regions:
+  header_first: Header First
+  content: Content
+  sidebar_first: Sidebar First
+  footer_first: Footer First

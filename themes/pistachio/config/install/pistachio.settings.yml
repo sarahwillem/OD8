@@ -1,0 +1,41 @@
+# The settings file contains the default settings used by the theme upon
+# installation. In previous versions of Drupal these settings were placed in the
+# theme's info file. See https://www.drupal.org/node/2382645 for more
+# information about the change.
+
+# If you are unsure what settings are available, or the proper format, export
+# your site's configuration (admin/config/development/configuration/full/export)
+# and use it as a guide.
+
+# The default group of theme settings are group under "features."
+features:
+  # Provide the default setting for "User pictures in posts."
+  node_user_picture: false
+  # Provide the default setting for "User pictures in comments."
+  comment_user_picture: false
+  # Provide the default setting for "User verification status in comments."
+  comment_user_verification: false
+  # Provide the default setting for "Shortcut icon."
+  favicon: true
+
+# If favicon is enabled, Drupal will automatically look for a file named
+# "favicon.ico" in the root of the theme folder. To specify the favicon's name
+# and path, uncomment the settings below and modify them as needed.
+#
+# favicon:
+#   mimetype: image/vnd.microsoft.icon
+#   path: ''
+#   url: ''
+#   use_default: false
+
+# The following are settings for the branding block's logo image. Drupal will
+# automatically look for a file named "logo.svg" in the root of the theme
+# folder. To specify the favicon's name and path, uncomment the settings below
+# and modify them as needed.
+#
+# logo:
+#   path: 'themes/pistachio/logo.svg'
+#   url: ''
+#   # Turn off the global the setting for "Use the default logo supplied by the
+#   # theme." See admin/appearance/settings.
+#   use_default: false

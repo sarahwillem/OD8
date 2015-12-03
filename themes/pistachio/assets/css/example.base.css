@@ -1,0 +1,11 @@
+.pistachio-example {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.pistachio-example__message {
+  padding: 1em 0;
+  font-size: 20px;
+  color: #FFF;
+  background-color: #92C66E;
+}

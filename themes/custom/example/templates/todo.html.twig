@@ -1,0 +1,21 @@
+{# {{ attach_library('todo/global-styling') }} #}
+
+<div class="todo">
+  <h2>{{ name }}</h2>
+
+  <div>
+    <ul>
+      {% for item in items %}
+        <li class="todo__item">{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div>
+    {% trans %} Translate {% endtrans %}
+  </div>
+
+  <hr class="todo__divider" />
+
+  <button class="todo__status">{{ status }}</button>
+</div>

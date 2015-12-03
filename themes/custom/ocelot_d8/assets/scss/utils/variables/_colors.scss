@@ -1,0 +1,19 @@
+$colors: (
+  white: #FFF,
+  black: #000,
+  darkgray: #5E5E5E,
+  gray: #EAEDF1,
+  red: #DD5555,
+  green: #82CA9C,
+  blue: #21B8C6,
+  error: #F0062C,
+  success: #4DB51F,
+);
+
+$text-color: map-get($colors, darkgray);
+
+$white: map-get($colors, white);
+$black: map-get($colors, black);
+$messages-bg: map-get($colors, red);
+$watches-bg: map-get($colors, blue);
+$likes-bg: map-get($colors, green);

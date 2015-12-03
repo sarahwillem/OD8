@@ -1,0 +1,21 @@
+body {
+  background: #F1F1F1;
+}
+
+.layout-container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.todo {
+  padding: 20px;
+  border: 1px solid lightgrey;
+  margin-bottom: 40px;
+  background: white;
+}
+
+button {
+  border: 1px solid hotpink;
+  padding: 5px 10px;
+  background: #E4E4E4;
+}

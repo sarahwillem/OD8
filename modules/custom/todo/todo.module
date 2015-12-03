@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains todo.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function todo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the todo module.
+    case 'help.page.todo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function todo_theme() {
+  $theme = [
+    'todo' => [
+      'variables' => [
+        'name' => '',
+        'items' => [],
+        'status' => '', 
+      ],
+    ],
+  ];
+
+  return $theme;
+}

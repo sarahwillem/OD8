@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains human.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function human_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the human module.
+    case 'help.page.human':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('human') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function human_theme() {
+  $theme = [
+    'human' => [
+      'variables' => [
+        'img' => '',
+        'name' => '',
+        'followers' => '',
+        'stats' => [
+          'msgs' => '',
+          'watches' => '',
+          'likes' => '',
+        ], 
+      ],
+    ],
+  ];
+
+  return $theme;
+}

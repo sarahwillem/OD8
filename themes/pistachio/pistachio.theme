@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * The [theme name].theme file contains all the conditional logic and data
+ * (pre)processing of content.
+ *
+ * This is the equivalent of template.php in previous versions of Drupal.
+ */
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * This function provides access to node content before it is rendered.
+ */
+function pistachio_preprocess_node(&$variables) {
+  // Add a CSS class to the every node's <article> tag.
+  $variables['attributes']['class'][] = 'pistachio-node';
+
+  // Core's normalize library gets included by default, but this shows how you
+  // would include a library in a preprocess function.
+  $variables['#attached']['library'][] = 'core/normalize';
+
+  // This creates a new variable that will be available to the node template.
+  $variables['pistachio'] = 'super awesome';
+}
